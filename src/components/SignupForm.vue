@@ -1,15 +1,25 @@
 <template lang="">
   <form>
 <label >Email:</label>
-<input type="email" required>
+<input v-model="email" type="email" required>
+<label >Password:</label>
+<input v-model="password" type="password" required>
   </form>
+  <p>Email: {{email}}</p>
+  <p>Password: {{password}}</p>
 </template>
 <script>
 export default {
 
+  data() {
+    return {
+      email: '',
+      password: ''
+    }
+  }
 }
 </script>
-<style >
+<style>
 form {
   max-width: 420px;
   margin: 30px auto;
@@ -28,10 +38,11 @@ label {
   letter-spacing: 1px;
   font-weight: bold;
 }
-input{
+
+input {
   display: block;
   padding: 10px 6px;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
   border: none;
   border-bottom: 1px solid #ddd;
